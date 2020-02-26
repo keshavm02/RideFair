@@ -15,13 +15,9 @@ All branch names must be divided into the following types:
 
 ### Team Members
 
-Keshav Maheshwari
-
-Ivy Chenyao
-
-Eric Chao
-
-Seyun Om
-
-Lavi Zhao
+- Keshav Maheshwari
+- Ivy Chenyao
+- Eric Chao
+- Seyun Om
+- Lavi Zhao
 
