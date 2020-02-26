@@ -10,8 +10,8 @@ All branch names must be divided into the following types:
   
   ##### Examples:
   
-  - If you work on a feature for creating a map view, name the branch "feature-createMapView".
-  - If you work on something that is not a feature, like adding package dependencies, name the branch "random-dependencies".
+  - If you work on a feature for creating a map view, name the branch "**feature-createMapView**".
+  - If you work on something that is not a feature, like adding package dependencies, name the branch "**random-dependencies**".
 
 ### Team Members
 
