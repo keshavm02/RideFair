@@ -23,6 +23,9 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
+        
+        //Show location
+        mapView.showsUserLocation = true
     }
 
 
