@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
@@ -24,7 +24,7 @@ class MapViewController: UIViewController {
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
         
-        //Show location
+        //Show current location
         mapView.showsUserLocation = true
     }
 
