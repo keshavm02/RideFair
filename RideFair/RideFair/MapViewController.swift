@@ -10,10 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
+    @IBOutlet weak var fromField: UITextField!
+    @IBOutlet weak var toField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         
         //Show current location
         mapView.showsUserLocation = true
+        
+        let request = MKDirections.Request()
+        request.transportType = .transit
     }
 
 
