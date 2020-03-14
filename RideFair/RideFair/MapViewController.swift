@@ -14,8 +14,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     @IBOutlet weak var mapView: MKMapView!
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
-    @IBOutlet weak var fromField: UITextField!
-    @IBOutlet weak var toField: UITextField!
+    
+    //    @IBOutlet weak var fromField: UITextField!
+//    @IBOutlet weak var toField: UITextField!
     var resultSearchController:UISearchController? = nil
     
     override func viewDidLoad() {
@@ -31,15 +32,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //Show current location
         mapView.showsUserLocation = true
-        
-//        let request = MKDirections.Request()
-//        request.transportType = .transit
-        
-//        let locationSearchTable = storyboard!.instantiateViewControllerWithIdentifier("LocationSearchTable") as! LocationSearchTable
-//        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
-//        resultSearchController?.searchResultsUpdater = locationSearchTable
     }
-
+    
+    @IBAction func currentLocationButton(_ sender: Any) {
+        let region = MKCoordinateRegion.init(center: mapView.userLocation.coordinate, span: MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        mapView.setRegion(region, animated: true)
+    }
 
 }
 
