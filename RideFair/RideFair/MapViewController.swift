@@ -16,6 +16,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
     @IBOutlet weak var fromField: UITextField!
     @IBOutlet weak var toField: UITextField!
+    var resultSearchController:UISearchController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
