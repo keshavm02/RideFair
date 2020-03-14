@@ -21,6 +21,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.isNavigationBarHidden = true
+        
         //Request and get location
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -30,8 +32,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //Show current location
         mapView.showsUserLocation = true
         
-        let request = MKDirections.Request()
-        request.transportType = .transit
+//        let request = MKDirections.Request()
+//        request.transportType = .transit
+        
+//        let locationSearchTable = storyboard!.instantiateViewControllerWithIdentifier("LocationSearchTable") as! LocationSearchTable
+//        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+//        resultSearchController?.searchResultsUpdater = locationSearchTable
     }
 
 
