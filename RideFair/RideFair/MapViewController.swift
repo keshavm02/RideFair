@@ -15,9 +15,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapView: MKMapView!
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
     
-    //    @IBOutlet weak var fromField: UITextField!
-//    @IBOutlet weak var toField: UITextField!
-    var resultSearchController:UISearchController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +29,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //Show current location
         mapView.showsUserLocation = true
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
