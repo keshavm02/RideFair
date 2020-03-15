@@ -62,10 +62,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcn-D6-gfF">
-                                <rect key="frame" x="62" y="717" width="59" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcn-D6-gfF">
+                                <rect key="frame" x="16" y="704" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Location"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
+                                <state key="normal" image="location.fill" catalog="system"/>
                                 <connections>
                                     <action selector="currentLocationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RcB-vz-v6J"/>
                                 </connections>
@@ -129,4 +131,7 @@
             <point key="canvasLocation" x="710" y="-339"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
+    </resources>
 </document>
