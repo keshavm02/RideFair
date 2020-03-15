@@ -22,7 +22,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.isNavigationBarHidden = true
+//        self.navigationController?.isNavigationBarHidden = true
         
         //Request and get location
         locationManager.requestWhenInUseAuthorization()
@@ -32,6 +32,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //Show current location
         mapView.showsUserLocation = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     // Button that zooms into current location
