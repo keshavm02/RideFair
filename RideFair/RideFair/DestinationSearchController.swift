@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import UIKit
+
+class DestinationSearchController: UITableViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = false
+        
+        
+    }
+}
