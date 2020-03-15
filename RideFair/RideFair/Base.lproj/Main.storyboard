@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="-620" y="125.61576354679804"/>
         </scene>
-        <!--Destination Search Controller-->
+        <!--Destination-->
         <scene sceneID="rXw-82-XGW">
             <objects>
                 <tableViewController storyboardIdentifier="DestinationSearchController" id="mdd-Zw-paj" customClass="DestinationSearchController" customModule="RideFair" customModuleProvider="target" sceneMemberID="viewController">
@@ -127,13 +127,13 @@
                             <outlet property="delegate" destination="mdd-Zw-paj" id="9em-Uf-SHh"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="EEY-3k-Ioo"/>
+                    <navigationItem key="navigationItem" title="Destination" id="EEY-3k-Ioo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoR-ZP-jIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="705" y="566"/>
         </scene>
-        <!--Origin Search Controller-->
+        <!--Origin-->
         <scene sceneID="TrJ-LI-DBS">
             <objects>
                 <tableViewController storyboardIdentifier="OriginSearchController" id="hpG-R1-ez9" customClass="OriginSearchController" customModule="RideFair" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,7 +172,7 @@
                             <outlet property="delegate" destination="hpG-R1-ez9" id="Cqm-cZ-W6m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ZBi-3W-SfA"/>
+                    <navigationItem key="navigationItem" title="Origin" id="ZBi-3W-SfA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KdJ-aA-owV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
