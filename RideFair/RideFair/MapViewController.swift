@@ -18,8 +18,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.navigationController?.isNavigationBarHidden = true
         
         //Request and get location
         locationManager.requestWhenInUseAuthorization()
@@ -30,6 +28,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //Show current location
         mapView.showsUserLocation = true
         
+        // Connect to OriginSearchController
+        let originSearchController = storyboard!.instantiateViewController(withIdentifier: "OriginSearchController") as! OriginSearchController
+        originSearchController.mapView = mapView
 
     }
     

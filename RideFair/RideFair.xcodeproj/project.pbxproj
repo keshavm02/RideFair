@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B79FE11241E6FFD0019D764 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B79FE10241E6FFD0019D764 /* MapKit.framework */; };
 		6B7ECDEB241CA24B004BDE2F /* OriginSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7ECDEA241CA24B004BDE2F /* OriginSearchController.swift */; };
 		6B7ECDED241DAE2B004BDE2F /* DestinationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7ECDEC241DAE2B004BDE2F /* DestinationSearchController.swift */; };
 		6BCCF6B1240736E000FFF812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B0240736E000FFF812 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B79FE10241E6FFD0019D764 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6B7ECDEA241CA24B004BDE2F /* OriginSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginSearchController.swift; sourceTree = "<group>"; };
 		6B7ECDEC241DAE2B004BDE2F /* DestinationSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSearchController.swift; sourceTree = "<group>"; };
 		6BCCF6AD240736E000FFF812 /* RideFair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideFair.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B79FE11241E6FFD0019D764 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B79FE0F241E6FFD0019D764 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B79FE10241E6FFD0019D764 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6BCCF6A4240736E000FFF812 = {
 			isa = PBXGroup;
 			children = (
 				6BCCF6AF240736E000FFF812 /* RideFair */,
 				6BCCF6AE240736E000FFF812 /* Products */,
+				6B79FE0F241E6FFD0019D764 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
