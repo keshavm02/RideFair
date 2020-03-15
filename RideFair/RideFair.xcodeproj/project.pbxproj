@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B7ECDEB241CA24B004BDE2F /* OriginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7ECDEA241CA24B004BDE2F /* OriginViewController.swift */; };
+		6B7ECDEB241CA24B004BDE2F /* OriginSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7ECDEA241CA24B004BDE2F /* OriginSearchController.swift */; };
+		6B7ECDED241DAE2B004BDE2F /* DestinationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7ECDEC241DAE2B004BDE2F /* DestinationSearchController.swift */; };
 		6BCCF6B1240736E000FFF812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B0240736E000FFF812 /* AppDelegate.swift */; };
 		6BCCF6B3240736E000FFF812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B2240736E000FFF812 /* SceneDelegate.swift */; };
 		6BCCF6B5240736E000FFF812 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B4240736E000FFF812 /* MapViewController.swift */; };
@@ -17,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6B7ECDEA241CA24B004BDE2F /* OriginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginViewController.swift; sourceTree = "<group>"; };
+		6B7ECDEA241CA24B004BDE2F /* OriginSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OriginSearchController.swift; sourceTree = "<group>"; };
+		6B7ECDEC241DAE2B004BDE2F /* DestinationSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationSearchController.swift; sourceTree = "<group>"; };
 		6BCCF6AD240736E000FFF812 /* RideFair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideFair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCCF6B0240736E000FFF812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BCCF6B2240736E000FFF812 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +67,8 @@
 				6BCCF6B9240736E300FFF812 /* Assets.xcassets */,
 				6BCCF6BB240736E300FFF812 /* LaunchScreen.storyboard */,
 				6BCCF6BE240736E300FFF812 /* Info.plist */,
-				6B7ECDEA241CA24B004BDE2F /* OriginViewController.swift */,
+				6B7ECDEA241CA24B004BDE2F /* OriginSearchController.swift */,
+				6B7ECDEC241DAE2B004BDE2F /* DestinationSearchController.swift */,
 			);
 			path = RideFair;
 			sourceTree = "<group>";
@@ -141,7 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B7ECDEB241CA24B004BDE2F /* OriginViewController.swift in Sources */,
+				6B7ECDEB241CA24B004BDE2F /* OriginSearchController.swift in Sources */,
+				6B7ECDED241DAE2B004BDE2F /* DestinationSearchController.swift in Sources */,
 				6BCCF6B5240736E000FFF812 /* MapViewController.swift in Sources */,
 				6BCCF6B1240736E000FFF812 /* AppDelegate.swift in Sources */,
 				6BCCF6B3240736E000FFF812 /* SceneDelegate.swift in Sources */,

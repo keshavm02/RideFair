@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class OriginViewController: UITableViewController {
+class OriginSearchController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
