@@ -15,14 +15,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapView: MKMapView!
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
     
-    //    @IBOutlet weak var fromField: UITextField!
-//    @IBOutlet weak var toField: UITextField!
-    var resultSearchController:UISearchController? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        self.navigationController?.isNavigationBarHidden = true
         
         //Request and get location
         locationManager.requestWhenInUseAuthorization()
@@ -32,6 +27,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //Show current location
         mapView.showsUserLocation = true
+        
+        // Connect to OriginSearchController
+        let originSearchController = storyboard!.instantiateViewController(withIdentifier: "OriginSearchController") as! OriginSearchController
+        originSearchController.mapView = mapView
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
