@@ -15,6 +15,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var locationButton: UIButton!
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
+    @IBOutlet weak var startNavigationButton: NavigationButton!
     
     
     override func viewDidLoad() {
