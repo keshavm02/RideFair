@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="-1948" y="126"/>
         </scene>
-        <!--Item-->
+        <!--Maps-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="RideFair" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController interfaceStyle="light" id="BYZ-38-t0r" customClass="MapViewController" customModule="RideFair" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcn-D6-gfF">
-                                <rect key="frame" x="16" y="704" width="40" height="40"/>
+                                <rect key="frame" x="16" y="674" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="29"/>
@@ -97,7 +97,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ybq-q2-ZUb"/>
+                    <tabBarItem key="tabBarItem" title="Maps" image="mappin.circle.fill" catalog="system" id="ybq-q2-ZUb"/>
                     <navigationItem key="navigationItem" id="iaW-Tq-rWM"/>
                     <connections>
                         <outlet property="mapView" destination="PIG-CX-heq" id="geX-e6-dO8"/>
@@ -200,5 +200,6 @@
     </scenes>
     <resources>
         <image name="location.fill" catalog="system" width="128" height="115"/>
+        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
