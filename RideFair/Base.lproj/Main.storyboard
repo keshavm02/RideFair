@@ -101,6 +101,7 @@
                     <tabBarItem key="tabBarItem" title="Maps" image="mappin.circle.fill" catalog="system" id="ybq-q2-ZUb"/>
                     <navigationItem key="navigationItem" id="iaW-Tq-rWM"/>
                     <connections>
+                        <outlet property="locationButton" destination="rcn-D6-gfF" id="hXL-qs-AEV"/>
                         <outlet property="mapView" destination="PIG-CX-heq" id="geX-e6-dO8"/>
                     </connections>
                 </viewController>

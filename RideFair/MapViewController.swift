@@ -13,11 +13,15 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var locationButton: UIButton!
     fileprivate let locationManager:CLLocationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set Styles
+        prettyUp()
         
         //Request and get location
         locationManager.requestWhenInUseAuthorization()
@@ -42,6 +46,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    func prettyUp() {
+        locationButton.layer.cornerRadius = locationButton.bounds.height/5
     }
     
     // Button that zooms into current location
