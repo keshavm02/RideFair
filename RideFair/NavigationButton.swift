@@ -67,18 +67,36 @@ class NavigationButton: UIButton {
       self.backgroundColor = .clear
     }
 
-    override func draw(_ rect: CGRect) {
-      guard let context = UIGraphicsGetCurrentContext() else {
-        return
-      }
+//    override func draw(_ rect: CGRect) {
+//      guard let context = UIGraphicsGetCurrentContext() else {
+//        return
+//      }
+//
+//      let color = UIColor(hue: hue,
+//        saturation: saturation,
+//        brightness: brightness,
+//        alpha: 1.0)
+//
+//      context.setFillColor(color.cgColor)
+//      context.fill(bounds)
+//    }
+    
+    func drawLinearGradient(
+      context: CGContext, rect: CGRect, startColor: CGColor, endColor: CGColor) {
+      // 1
+      let colorSpace = CGColorSpaceCreateDeviceRGB()
+      
+      // 2
+      let colorLocations: [CGFloat] = [0.0, 1.0]
+      
+      // 3
+      let colors: CFArray = [startColor, endColor] as CFArray
+      
+      // 4
+      let gradient = CGGradient(
+        colorsSpace: colorSpace, colors: colors, locations: colorLocations)!
 
-      let color = UIColor(hue: hue,
-        saturation: saturation,
-        brightness: brightness,
-        alpha: 1.0)
-
-      context.setFillColor(color.cgColor)
-      context.fill(bounds)
+      // More to come...
     }
     
 }
