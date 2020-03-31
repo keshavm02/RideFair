@@ -28,4 +28,28 @@ class NavigationButton: UIButton {
       }
     }
 
+    required init?(coder aDecoder: NSCoder) {
+      self.hue = 0.5
+      self.saturation = 0.5
+      self.brightness = 0.5
+      
+      super.init(coder: aDecoder)
+      
+      self.isOpaque = false
+      self.backgroundColor = .clear
+    }
+
+    override func draw(_ rect: CGRect) {
+      guard let context = UIGraphicsGetCurrentContext() else {
+        return
+      }
+
+      let color = UIColor(hue: hue,
+        saturation: saturation,
+        brightness: brightness,
+        alpha: 1.0)
+
+      context.setFillColor(color.cgColor)
+      context.fill(bounds)
+    }
 }
