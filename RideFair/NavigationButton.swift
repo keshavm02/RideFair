@@ -10,6 +10,34 @@ import UIKit
 
 class NavigationButton: UIButton {
 
+    override func draw(_ rect: CGRect) {
+      guard let context = UIGraphicsGetCurrentContext() else {
+        return
+      }
+      
+      // 1
+      let outerColor = UIColor(
+        hue: hue, saturation: saturation, brightness: brightness, alpha: 1.0)
+      let shadowColor = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 0.5)
+      
+      // 2
+      let outerMargin: CGFloat = 5.0
+      let outerRect = rect.insetBy(dx: outerMargin, dy: outerMargin)
+      // 3
+      let outerPath = createRoundedRectPath(for: outerRect, radius: 6.0)
+      
+      // 4
+      if state != .highlighted {
+        context.saveGState()
+        context.setFillColor(outerColor.cgColor)
+        context.setShadow(offset: CGSize(width: 0, height: 2),
+          blur: 3.0, color: shadowColor.cgColor)
+        context.addPath(outerPath)
+        context.fillPath()
+        context.restoreGState()
+      }
+    }
+    
     var hue: CGFloat {
       didSet {
         setNeedsDisplay()
@@ -52,4 +80,5 @@ class NavigationButton: UIButton {
       context.setFillColor(color.cgColor)
       context.fill(bounds)
     }
+    
 }
