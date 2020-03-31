@@ -73,6 +73,9 @@
                                 <state key="normal" title="Start Navigation">
                                     <color key="titleColor" red="0.15093472632930666" green="0.36028171721152019" blue="0.55585739213197971" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <segue destination="oXd-xg-29s" kind="show" id="XmZ-18-kYa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -89,6 +92,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-620" y="125.61576354679804"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MDx-4p-Xkm">
+            <objects>
+                <viewController id="oXd-xg-29s" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="955-lI-BTH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="W1W-2T-55B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="m7T-Sb-SbP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pbi-RK-sVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733.60000000000002" y="125.61576354679804"/>
         </scene>
         <!--Accessibility Info-->
         <scene sceneID="F7T-2Y-Px6">
@@ -171,7 +190,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoR-ZP-jIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="566"/>
+            <point key="canvasLocation" x="2462" y="543"/>
         </scene>
         <!--Origin-->
         <scene sceneID="TrJ-LI-DBS">
@@ -216,7 +235,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KdJ-aA-owV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="-339"/>
+            <point key="canvasLocation" x="2462" y="-372"/>
         </scene>
     </scenes>
     <resources>
