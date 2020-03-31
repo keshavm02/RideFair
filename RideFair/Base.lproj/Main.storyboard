@@ -112,12 +112,12 @@
         <!--Accessibility Info-->
         <scene sceneID="F7T-2Y-Px6">
             <objects>
-                <tableViewController id="5A1-u8-zzD" sceneMemberID="viewController">
+                <tableViewController id="5A1-u8-zzD" customClass="InfoTableViewController" customModule="RideFair" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="15p-me-zAM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" placeholder="Search for stops" showsCancelButton="YES" id="xkB-cA-Cq9">
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="prominent" placeholder="Search for stops" id="xkB-cA-Cq9">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
@@ -136,12 +136,12 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="5A1-u8-zzD" id="PTE-0O-EHY"/>
-                            <outlet property="delegate" destination="5A1-u8-zzD" id="2YT-ny-u1e"/>
-                        </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Accessibility Info" image="info.circle.fill" catalog="system" id="fB6-ia-c7Z"/>
+                    <connections>
+                        <outlet property="infoSearchBar" destination="xkB-cA-Cq9" id="wHI-i3-SWz"/>
+                        <outlet property="tableViewOutlet" destination="15p-me-zAM" id="0ey-6V-wKl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dc1-eJ-vJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
