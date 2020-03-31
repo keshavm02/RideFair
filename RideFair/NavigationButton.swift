@@ -29,9 +29,9 @@ class NavigationButton: UIButton {
     }
 
     required init?(coder aDecoder: NSCoder) {
-      self.hue = 0.5
-      self.saturation = 0.5
-      self.brightness = 0.5
+      self.hue = 0.4
+      self.saturation = 0.3
+      self.brightness = 0.8
       
       super.init(coder: aDecoder)
       
@@ -65,6 +65,20 @@ class NavigationButton: UIButton {
         context.fillPath()
         context.restoreGState()
       }
+        // Outer Path Gradient:
+        // 1
+        let outerTop = UIColor(hue: hue, saturation: saturation,
+          brightness: brightness, alpha: 1.0)
+        let outerBottom = UIColor(hue: hue, saturation: saturation,
+          brightness: brightness * 0.8, alpha: 1.0)
+
+        // 2
+        context.saveGState()
+        context.addPath(outerPath)
+        context.clip()
+        drawGlossAndGradient(context: context, rect: outerRect,
+                             startColor: outerTop.cgColor, endColor: outerBottom.cgColor)
+        context.restoreGState()
     }
     
     func createRoundedRectPath(for rect: CGRect, radius: CGFloat) -> CGMutablePath {
@@ -117,5 +131,54 @@ class NavigationButton: UIButton {
 //      context.fill(bounds)
 //    }
     
+    func drawLinearGradient(
+      context: CGContext, rect: CGRect, startColor: CGColor, endColor: CGColor) {
+      // 1
+      let colorSpace = CGColorSpaceCreateDeviceRGB()
+      
+      // 2
+      let colorLocations: [CGFloat] = [0.0, 1.0]
+      
+      // 3
+      let colors: CFArray = [startColor, endColor] as CFArray
+      
+      // 4
+      let gradient = CGGradient(
+        colorsSpace: colorSpace, colors: colors, locations: colorLocations)!
+
+      // 5
+      let startPoint = CGPoint(x: rect.midX, y: rect.minY)
+      let endPoint = CGPoint(x: rect.midX, y: rect.maxY)
+
+      context.saveGState()
+
+      // 6
+      context.addRect(rect)
+      // 7
+      context.clip()
+
+      // 8
+      context.drawLinearGradient(
+        gradient, start: startPoint, end: endPoint, options: [])
+
+      context.restoreGState()
+    }
+    
+    func drawGlossAndGradient(
+      context: CGContext, rect: CGRect, startColor: CGColor, endColor: CGColor) {
+
+      // 1
+      drawLinearGradient(
+        context: context, rect: rect, startColor: startColor, endColor: endColor)
+      
+      let glossColor1 = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.35)
+      let glossColor2 = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.1)
+      
+      let topHalf = CGRect(origin: rect.origin,
+        size: CGSize(width: rect.width, height: rect.height/2))
+      
+      drawLinearGradient(context: context, rect: topHalf,
+        startColor: glossColor1.cgColor, endColor: glossColor2.cgColor)
+    }
     
 }
