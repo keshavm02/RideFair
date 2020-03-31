@@ -29,8 +29,8 @@ class NavigationButton: UIButton {
     }
 
     required init?(coder aDecoder: NSCoder) {
-      self.hue = 0.4
-      self.saturation = 0.3
+      self.hue = 0.3
+      self.saturation = 0.4
       self.brightness = 0.8
       
       super.init(coder: aDecoder)
