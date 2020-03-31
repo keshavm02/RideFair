@@ -64,6 +64,19 @@
                                     <action selector="currentLocationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RcB-vz-v6J"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkS-eg-S6C" customClass="NavigationButton" customModule="RideFair" customModuleProvider="target">
+                                <rect key="frame" x="40" y="61" width="294" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="33"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Start Navigation">
+                                    <color key="titleColor" red="0.15093472632930666" green="0.36028171721152019" blue="0.55585739213197971" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oXd-xg-29s" kind="show" id="XmZ-18-kYa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -73,11 +86,28 @@
                     <connections>
                         <outlet property="locationButton" destination="rcn-D6-gfF" id="hXL-qs-AEV"/>
                         <outlet property="mapView" destination="PIG-CX-heq" id="geX-e6-dO8"/>
+                        <outlet property="startNavigationButton" destination="NkS-eg-S6C" id="Ex2-30-NDS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-620" y="125.61576354679804"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MDx-4p-Xkm">
+            <objects>
+                <viewController id="oXd-xg-29s" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="955-lI-BTH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="W1W-2T-55B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="m7T-Sb-SbP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pbi-RK-sVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733.60000000000002" y="125.61576354679804"/>
         </scene>
         <!--Accessibility Info-->
         <scene sceneID="F7T-2Y-Px6">
@@ -160,7 +190,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoR-ZP-jIC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="566"/>
+            <point key="canvasLocation" x="2462" y="543"/>
         </scene>
         <!--Origin-->
         <scene sceneID="TrJ-LI-DBS">
@@ -205,7 +235,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KdJ-aA-owV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="-339"/>
+            <point key="canvasLocation" x="2462" y="-372"/>
         </scene>
     </scenes>
     <resources>
