@@ -26,6 +26,10 @@ class InfoTableViewController: UITableViewController, UISearchBarDelegate {
         infoSearchBar.setShowsCancelButton(true, animated: true)
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        infoSearchBar.endEditing(true)
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         infoSearchBar.text = nil
         infoSearchBar.setShowsCancelButton(false, animated: true)
