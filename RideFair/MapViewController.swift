@@ -50,6 +50,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func prettyUp() {
         locationButton.layer.cornerRadius = locationButton.bounds.height/5
+        overrideUserInterfaceStyle = .dark
+    }
+    
+    public func setToDarkMode() {
+        overrideUserInterfaceStyle = .dark
     }
     
     // Button that zooms into current location

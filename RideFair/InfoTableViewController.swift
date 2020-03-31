@@ -14,8 +14,10 @@ class InfoTableViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var infoSearchBar: UISearchBar!
     @IBOutlet var tableViewOutlet: UITableView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .dark
         
         infoSearchBar.delegate = self
         
