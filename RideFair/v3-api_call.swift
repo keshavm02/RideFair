@@ -3,7 +3,7 @@ import Foundation
 
 var semaphore = DispatchSemaphore (value: 0)
 
-var request = URLRequest(url: URL(string: "https://api-v3.mbta.com/facilities?filter[stop]=place-north")!,timeoutInterval: Double.infinity)
+var request = URLRequest(url: URL(string: "https://api-v3.mbta.com/stops/place-kencl/")!,timeoutInterval: Double.infinity)
 request.httpMethod = "GET"
 
 let task = URLSession.shared.dataTask(with: request) { data, response, error in 
@@ -13,7 +13,11 @@ let task = URLSession.shared.dataTask(with: request) { data, response, error in
   }
   if let responseJSON = try? JSONSerialization.jsonObject(with: data, options: []){
       if let jsonArray = responseJSON as? [String: Any]{
-          print(jsonArray["data"])
+          if let dat = jsonArray["data"] as? [String: Any]{
+              if let attributes = dat["attributes"] as? [String: Any]{
+                  print(attributes["wheelchair_boarding"])
+              }
+          }
       }
   }
   //print(String(data: data, encoding: .utf8)!)
