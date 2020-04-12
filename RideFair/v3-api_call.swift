@@ -67,6 +67,6 @@ func isWheelChairAccessible(stop: String) -> Int{
     return isAccessible
 }
 
-//testing functionality
+//testing functionality of functions
 print(getFacilities(stop: "place-kencl"))
 print(isWheelChairAccessible(stop: "place-kencl"))
