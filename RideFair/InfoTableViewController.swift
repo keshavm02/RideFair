@@ -11,32 +11,84 @@ import UIKit
 
 class InfoTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
-    @IBOutlet weak var infoSearchBar: UISearchBar!
-    @IBOutlet var tableViewOutlet: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
-    let documents: [String] = ["Lechmere", "Science Park", "North Station", "Haymarket", "Government Center", "Park Street", "Boylston", "Arlington", "Copley", "Hynes Convention Center", "Kenmore", "Blandford Street", "Boston University East", "Boston University Central", "Boston University West", "Saint Paul Street", "Pleasant Street", "Babcock Street", "Packards Corner", "Harvard Avenue", "Griggs Street", "Allston Street", "Warren Street", "Washington Street", "Sutherland Road", "Chiswick Road", "Chestnut Hill Avenue", "South Street", "Boston College"]
+    let stops: [String] = ["Lechmere", "Science Park", "North Station", "Haymarket", "Government Center", "Park Street", "Boylston", "Arlington", "Copley", "Hynes Convention Center", "Kenmore", "Blandford Street", "Boston University East", "Boston University Central", "Boston University West", "Saint Paul Street", "Pleasant Street", "Babcock Street", "Packards Corner", "Harvard Avenue", "Griggs Street", "Allston Street", "Warren Street", "Washington Street", "Sutherland Road", "Chiswick Road", "Chestnut Hill Avenue", "South Street", "Boston College"]
+    
+    let cellReuseIdentifier = "cell"
+    
+    var filteredStops: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideUserInterfaceStyle = .dark
         
-        infoSearchBar.delegate = self
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        self.tableView.tableFooterView = UIView()
         
-        tableViewOutlet.keyboardDismissMode = .interactive
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.rowHeight = 80
+        
+        searchBar.delegate = self
+        filteredStops = stops
+        
+        tableView.keyboardDismissMode = .interactive
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
+        self.tabBarController?.navigationItem.title = "Stops"
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.filteredStops.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = (self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell?)!
+        
+        cell.textLabel?.text = self.filteredStops[indexPath.row]
+        
+        return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredStops = searchText.isEmpty ? stops : stops.filter { (item: String) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+            return item.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped cell number \(indexPath.row).")
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "InfoPageController") as! InfoPageController
+        nextViewController.modalPresentationStyle = .popover
+        self.present(nextViewController, animated:true, completion:nil)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        infoSearchBar.setShowsCancelButton(true, animated: true)
+        self.searchBar.setShowsCancelButton(true, animated: true)
+        searchBar.tintColor = UIColor.blue
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        infoSearchBar.endEditing(true)
+        self.searchBar.endEditing(true)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        infoSearchBar.text = nil
-        infoSearchBar.setShowsCancelButton(false, animated: true)
-        infoSearchBar.endEditing(true)
+        searchBar.text = nil
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.endEditing(true)
+        filteredStops = stops
+        tableView.reloadData()
     }
-    
 }
