@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 
-class InfoTableViewController: UITableViewController, UISearchBarDelegate {
+class InfoTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var infoSearchBar: UISearchBar!
     @IBOutlet var tableViewOutlet: UITableView!
     
+    let documents: [String] = ["Criminal Complaint Form", "Criminal Complaint Application", "Police Report", "Booking Photo", "Miranda Form", "Board of Probation Criminal Record"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
