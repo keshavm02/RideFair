@@ -29,7 +29,7 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.rowHeight = 80
+        tableView.rowHeight = 50
         
         searchBar.delegate = self
         filteredStops = stops
