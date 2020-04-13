@@ -164,6 +164,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IZS-aJ-q8A"/>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="oKR-um-UDc" id="b2y-kL-mF1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbr-Or-Wh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
