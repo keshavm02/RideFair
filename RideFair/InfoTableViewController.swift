@@ -14,7 +14,7 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var infoSearchBar: UISearchBar!
     @IBOutlet var tableViewOutlet: UITableView!
     
-    let documents: [String] = ["Criminal Complaint Form", "Criminal Complaint Application", "Police Report", "Booking Photo", "Miranda Form", "Board of Probation Criminal Record"]
+    let documents: [String] = ["Lechmere", "Science Park", "North Station", "Haymarket", "Government Center", "Park Street", "Boylston", "Arlington", "Copley", "Hynes Convention Center", "Kenmore", "Blandford Street", "Boston University East", "Boston University Central", "Boston University West", "Saint Paul Street", "Pleasant Street", "Babcock Street", "Packards Corner", "Harvard Avenue", "Griggs Street", "Allston Street", "Warren Street", "Washington Street", "Sutherland Road", "Chiswick Road", "Chestnut Hill Avenue", "South Street", "Boston College"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
