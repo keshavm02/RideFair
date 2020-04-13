@@ -13,6 +13,7 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    var selectedStop = String()
     
     let stops: [String] = ["Lechmere",
                            "Science Park/West End",
@@ -95,6 +96,7 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
+        selectedStop = stops[indexPath.row]
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 
