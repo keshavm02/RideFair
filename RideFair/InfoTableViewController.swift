@@ -14,7 +14,35 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    let stops: [String] = ["Lechmere", "Science Park", "North Station", "Haymarket", "Government Center", "Park Street", "Boylston", "Arlington", "Copley", "Hynes Convention Center", "Kenmore", "Blandford Street", "Boston University East", "Boston University Central", "Boston University West", "Saint Paul Street", "Pleasant Street", "Babcock Street", "Packards Corner", "Harvard Avenue", "Griggs Street", "Allston Street", "Warren Street", "Washington Street", "Sutherland Road", "Chiswick Road", "Chestnut Hill Avenue", "South Street", "Boston College"]
+    let stops: [String] = ["Lechmere",
+                           "Science Park/West End",
+                           "North Station",
+                           "Haymarket",
+                           "Government Center",
+                           "Park Street",
+                           "Boylston",
+                           "Arlington",
+                           "Copley",
+                           "Hynes Convention Center",
+                           "Kenmore",
+                           "Blandford Street",
+                           "BU East",
+                           "BU Central",
+                           "BU West",
+                           "St Paul Street",
+                           "Pleasant Street",
+                           "Babcock Street",
+                           "Packard's Corner",
+                           "Harvard Ave",
+                           "Griggs Street",
+                           "Allston Street",
+                           "Warren Street",
+                           "Washington Street",
+                           "Sutherland Road",
+                           "Chiswick Road",
+                           "Chestnut Hill Ave",
+                           "South Street",
+                           "Boston College"]
     
     let cellReuseIdentifier = "cell"
     
