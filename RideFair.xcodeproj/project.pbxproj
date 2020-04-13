@@ -88,8 +88,8 @@
 				6B7ECDEA241CA24B004BDE2F /* OriginSearchController.swift */,
 				6B7ECDEC241DAE2B004BDE2F /* DestinationSearchController.swift */,
 				6B141E6A2432D801005417CE /* InfoTableViewController.swift */,
-				6B141E6E2432FD2B005417CE /* NavigationButton.swift */,
 				6BF2A65824441AA300B0CF40 /* InfoPageController.swift */,
+				6B141E6E2432FD2B005417CE /* NavigationButton.swift */,
 			);
 			path = RideFair;
 			sourceTree = "<group>";

@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class InfoPageController: UIViewController {
+    
+    let infoTableVC = InfoTableViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
