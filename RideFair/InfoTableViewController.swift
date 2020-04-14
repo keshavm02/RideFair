@@ -133,7 +133,7 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You tapped cell number \(indexPath.row).")
         
-        selectedStop = stops[indexPath.row]
+        selectedStop = filteredStops[indexPath.row]
         print(selectedStop)
         let stopCode = stopIDs[selectedStop] ?? "place-lech"
         
