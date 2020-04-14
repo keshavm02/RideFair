@@ -18,6 +18,7 @@
 		6BCCF6B8240736E000FFF812 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B6240736E000FFF812 /* Main.storyboard */; };
 		6BCCF6BA240736E300FFF812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B9240736E300FFF812 /* Assets.xcassets */; };
 		6BCCF6BD240736E300FFF812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BCCF6BB240736E300FFF812 /* LaunchScreen.storyboard */; };
+		6BF2A65B24453D4400B0CF40 /* MBTA-API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF2A65A24453D4400B0CF40 /* MBTA-API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		6BCCF6B9240736E300FFF812 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BCCF6BC240736E300FFF812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BCCF6BE240736E300FFF812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BF2A65A24453D4400B0CF40 /* MBTA-API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MBTA-API.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				6B7ECDEC241DAE2B004BDE2F /* DestinationSearchController.swift */,
 				6B141E6A2432D801005417CE /* InfoTableViewController.swift */,
 				6B141E6E2432FD2B005417CE /* NavigationButton.swift */,
+				6BF2A65A24453D4400B0CF40 /* MBTA-API.swift */,
 			);
 			path = RideFair;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				6B7ECDEB241CA24B004BDE2F /* OriginSearchController.swift in Sources */,
 				6B7ECDED241DAE2B004BDE2F /* DestinationSearchController.swift in Sources */,
 				6BCCF6B5240736E000FFF812 /* MapViewController.swift in Sources */,
+				6BF2A65B24453D4400B0CF40 /* MBTA-API.swift in Sources */,
 				6B141E6B2432D801005417CE /* InfoTableViewController.swift in Sources */,
 				6BCCF6B1240736E000FFF812 /* AppDelegate.swift in Sources */,
 				6BCCF6B3240736E000FFF812 /* SceneDelegate.swift in Sources */,
