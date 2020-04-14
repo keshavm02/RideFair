@@ -40,7 +40,6 @@ class API: UIViewController {
         task.resume()
         semaphore.wait()
         print(isAccessible)
-        print(stop)
         return isAccessible
     }
     

@@ -139,11 +139,12 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         
-        if (API().isWheelChairAccessible(stop: stopCode) == 1) {
+        let isWheelchairAccessible = API().isWheelChairAccessible(stop: stopCode)
+        if (isWheelchairAccessible == 1) {
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "wheelchair")
             nextViewController.modalPresentationStyle = .popover
             self.present(nextViewController, animated:true, completion:nil)
-        } else if (API().isWheelChairAccessible(stop: stopCode) == 2) {
+        } else if (isWheelchairAccessible == 2) {
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "notWheelchair")
             nextViewController.modalPresentationStyle = .popover
             self.present(nextViewController, animated:true, completion:nil)
