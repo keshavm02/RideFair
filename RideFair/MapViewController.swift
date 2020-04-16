@@ -34,7 +34,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.showsUserLocation = true
         
         // Connect to OriginSearchController
-        let originSearchController = storyboard!.instantiateViewController(withIdentifier: "OriginSearchController") as! OriginSearchController
+        let originSearchController = storyboard!.instantiateViewController(withIdentifier: "originViewController") as! originViewController
         originSearchController.mapView = mapView
 
     }
