@@ -30,7 +30,7 @@ class originViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         self.tableView.tableFooterView = UIView()
         
@@ -42,7 +42,8 @@ class originViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchBar.delegate = self
         filteredStops = stops
         
-        tableView.keyboardDismissMode = .interactive
+        tableView.keyboardDismissMode = .interactive*/
+        
         
     }
     
