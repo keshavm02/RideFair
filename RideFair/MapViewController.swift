@@ -33,11 +33,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
-        
-        /*
-         // Connect to OriginSearchController
-         let originSearchController = storyboard!.instantiateViewController(withIdentifier: "originViewController") as! originViewController
-         originSearchController.mapView = mapView*/
     }
         
     // When user selects address, drop red pin and zoom in on that location
