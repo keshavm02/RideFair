@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vh7-E0-976">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vh7-E0-976">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -875,10 +875,10 @@
             </objects>
             <point key="canvasLocation" x="-1497" y="1171"/>
         </scene>
-        <!--View Controller-->
+        <!--Wheelchair View Controller-->
         <scene sceneID="cG9-OR-9Pq">
             <objects>
-                <viewController storyboardIdentifier="wheelchair" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hmR-8V-c14" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wheelchair" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hmR-8V-c14" customClass="WheelchairViewController" customModule="RideFair" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5I7-yy-Xkp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -894,10 +894,31 @@
                                 <rect key="frame" x="67" y="219" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HZt-a1-uE5">
+                                <rect key="frame" x="16" y="467" width="343" height="311"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Flq-HB-1ef">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Flq-HB-1ef" id="yxV-o9-hiT">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="hmR-8V-c14" id="Coc-I6-Spn"/>
+                                    <outlet property="delegate" destination="hmR-8V-c14" id="Wff-qh-vNi"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="IZS-aJ-q8A"/>
                     </view>
+                    <connections>
+                        <outlet property="facilitiesTable" destination="HZt-a1-uE5" id="AgO-i9-wle"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bbr-Or-Wh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="bup-f7-rdp">
@@ -907,7 +928,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </objects>
-            <point key="canvasLocation" x="-551" y="857"/>
+            <point key="canvasLocation" x="-551.20000000000005" y="856.4039408866995"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oMC-RA-AK4">
@@ -1207,17 +1228,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="book.fill" catalog="system" width="128" height="100"/>
-        <image name="cart.fill" catalog="system" width="128" height="102"/>
-        <image name="clear.fill" catalog="system" width="128" height="114"/>
+        <image name="book.fill" catalog="system" width="64" height="50"/>
+        <image name="cart.fill" catalog="system" width="64" height="50"/>
+        <image name="clear.fill" catalog="system" width="64" height="56"/>
         <image name="greenline" width="168" height="29"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="location.fill" catalog="system" width="128" height="115"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="mappin.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
+        <image name="info.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="mappin.circle.fill" catalog="system" width="64" height="60"/>
         <image name="notWheelchair" width="236" height="235"/>
-        <image name="tram.fill" catalog="system" width="98" height="128"/>
+        <image name="tram.fill" catalog="system" width="48" height="64"/>
         <image name="wheelchair" width="1200" height="1200"/>
     </resources>
 </document>
