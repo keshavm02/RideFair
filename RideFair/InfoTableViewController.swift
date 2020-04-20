@@ -146,9 +146,11 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
             nextViewController.stopId = stopCode
             self.present(nextViewController, animated:true, completion:nil)
         } else if (isWheelchairAccessible == 2) {
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "notWheelchair")
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "wheelchair") as! WheelchairViewController
             nextViewController.modalPresentationStyle = .popover
+            nextViewController.stopId = stopCode
             self.present(nextViewController, animated:true, completion:nil)
+            nextViewController.wheelchairImageView.image = UIImage(named: "notWheelchair")
         }
     }
     
