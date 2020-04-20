@@ -9,6 +9,7 @@
 import UIKit
 
 class WheelchairViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.facilitiesList.count
     }
@@ -26,14 +27,25 @@ class WheelchairViewController: UIViewController, UITableViewDataSource, UITable
         aCell.detailTextLabel?.text = self.facilitiesName[indexPath.row].replacingOccurrences(of: "_", with: " ")
         return aCell
     }
+    
     var facilitiesList: [String] = []
     var facilitiesName: [String] = []
     var stopId: String?;
+    @IBOutlet weak var wheelchairImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let rawFacilitiesList = API().getFacilities(stop: stopId!)
         facilitiesList = Array(rawFacilitiesList.values.map{ $0 })
         facilitiesName = Array(rawFacilitiesList.keys.map{ $0 })
+        
+        if rawFacilitiesList.isEmpty {
+            let noneDict = ["None":"No reported facilities at this stop."]
+            facilitiesList = Array(noneDict.keys.map{ $0 })
+            facilitiesName = Array(noneDict.values.map{ $0 })
+        }
+        
+        facilitiesTable.rowHeight = 50
         
         // Do any additional setup after loading the view.
     }
