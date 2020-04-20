@@ -25,7 +25,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
-        
         mapView.showsUserLocation = true // Show current location
         
         // Request and get location
@@ -34,12 +33,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
-        /*
-        if fromTextField.text == "Warren Towers" {
-            dropPinZoomIn(long: 42.3495,lat: -71.1048,name: "Warren Towers",address:"700 Commonwealth Avenue, Boston, MA 02215")
-        }
-        */
-        
         
         /*
          // Connect to OriginSearchController
@@ -47,8 +40,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
          originSearchController.mapView = mapView*/
     }
         
-    func dropPinZoomIn(long:Double,lat:Double,name:String,address:String) {
-        //mapView.removeAnnotations(mapView.annotations)
+    // When user selects address, drop red pin and zoom in on that location
+    func dropPinZoomIn(long: Double, lat: Double, name: String, address: String) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: long)
         annotation.title = name
@@ -57,6 +50,71 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
         let region = MKCoordinateRegion(center: annotation.coordinate, span: span)
         self.mapView.setRegion(region, animated: true)
+    }
+    
+    // Draw route between origin and destination on map
+    func drawRouteOnMap(originCoord: CLLocationCoordinate2D, destCoord: CLLocationCoordinate2D) {
+        mapView.removeAnnotations(mapView.annotations)
+        let sourcePlacemark = MKPlacemark(coordinate: originCoord)
+        let destPlacemark = MKPlacemark(coordinate: destCoord)
+        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+        let destMapItem = MKMapItem(placemark: destPlacemark)
+        
+        let sourceAnnotation = MKPointAnnotation()
+        sourceAnnotation.title = "Start: Warren Towers"
+        if let location = sourcePlacemark.location {
+            sourceAnnotation.coordinate = location.coordinate
+        }
+        
+        let destAnnotation = MKPointAnnotation()
+        destAnnotation.title = "End: Boston Public Library"
+        if let location = destPlacemark.location {
+            destAnnotation.coordinate = location.coordinate
+        }
+        
+        self.mapView.showAnnotations([sourceAnnotation,destAnnotation], animated: true)
+        
+        let directionRequest = MKDirections.Request()
+        directionRequest.source = sourceMapItem
+        directionRequest.destination = destMapItem
+        directionRequest.transportType = .automobile
+        
+        // Calculate direction
+        let directions = MKDirections(request: directionRequest)
+        
+        directions.calculate {
+            (response, error) -> Void in
+            guard let response = response else {
+                if let error = error {
+                    print("Error: \(error)")
+                }
+                return
+            }
+            let route = response.routes[0]
+            self.mapView.addOverlay(route.polyline, level: MKOverlayLevel.aboveRoads)
+            var regionRect = route.polyline.boundingMapRect
+            
+            // Add padding to the viewable region of entire route
+            let wPadding = regionRect.size.width * 0.5
+            let hPadding = regionRect.size.height * 0.5
+            regionRect.size.width += wPadding
+            regionRect.size.height += hPadding
+
+            // Center the region on the line
+            regionRect.origin.x -= wPadding / 2
+            regionRect.origin.y -= hPadding / 2
+            
+            self.mapView.setRegion(MKCoordinateRegion(regionRect), animated: true)
+        }
+    }
+    
+    // Render blue route line between origin and destination
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor(red: 17.0/255.0, green: 147.0/255.0, blue: 255.0/255.0, alpha: 1)
+        renderer.lineWidth = 5.0
+
+        return renderer
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,6 +133,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if segue.identifier == "maptoFromSegue" {
             let vc = segue.destination as! FromTableViewController
             vc.origin = fromTextField.text ?? ""
+        }
+        
+        if segue.identifier == "maptoToSegue" {
+            let vc = segue.destination as! ToTableViewController
+            vc.dest = toTextField.text ?? ""
         }
     }
     
@@ -95,23 +158,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.mapView.setRegion(region, animated: true)
     }
     
+    // When user types in "From" text field, open location search table view
     @IBAction func fromTextFieldChanged(_ sender: Any) {
-        //fromTableView.isHidden = false
         performSegue(withIdentifier: "maptoFromSegue", sender: nil)
-        
     }
     
+    @IBAction func toTextFieldChanged(_ sender: Any) {
+        performSegue(withIdentifier: "maptoToSegue", sender: nil)
+    }
     
+    // Clear button for "From" text field
     @IBAction func fromClearButtonClicked(_ sender: Any) {
         fromTextField.text = ""
         fromTextField.placeholder = "Enter origin"
     }
     
+    // Clear button for "To" text field
     @IBAction func toClearButtonClicked(_ sender: Any) {
         toTextField.text = ""
         toTextField.placeholder = "Enter destination"
     }
     
+    // Return to main map view from another View Controller
     @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
         print("Unwind to Root View Controller")
     }
