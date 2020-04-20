@@ -16,13 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="OXT-1U-Y3c">
-                                <rect key="frame" x="0.0" y="1" width="414" height="895"/>
+                                <rect key="frame" x="0.0" y="-3" width="414" height="903"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="OXT-1U-Y3c" secondAttribute="bottom" id="Ayy-pt-dfH"/>
-                            <constraint firstItem="OXT-1U-Y3c" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="1" id="PaR-yY-GrF"/>
+                            <constraint firstAttribute="bottom" secondItem="OXT-1U-Y3c" secondAttribute="bottom" constant="-4" id="Ayy-pt-dfH"/>
+                            <constraint firstItem="OXT-1U-Y3c" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-3" id="PaR-yY-GrF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OXT-1U-Y3c" secondAttribute="trailing" id="V4k-Fu-9vs"/>
                             <constraint firstItem="OXT-1U-Y3c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XPh-nA-m3B"/>
                         </constraints>

@@ -10,9 +10,10 @@ import UIKit
 import MapKit
 
 class StationRecViewController: UIViewController {
-
     @IBOutlet weak var handicapSwitch: UISwitch!
     @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var recView: UIView!
+    @IBOutlet weak var nonhandicapRecView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +38,18 @@ class StationRecViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Close", style: UIAlertAction.Style.destructive, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // Toggle switch to indicate handicap accessibility stations required
+    @IBAction func handicapSwitchToggled(_ sender: Any) {
+        // Add slight delay to load
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            if self.handicapSwitch.isOn == true { // Show handicap accessible only stations
+                self.recView.isHidden = false
+                self.nonhandicapRecView.isHidden = true
+            } else { // Show all recommended stations
+                self.recView.isHidden = true
+                self.nonhandicapRecView.isHidden = false
+            }
+        }
     }
-    */
-
 }
