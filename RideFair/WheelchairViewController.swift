@@ -46,7 +46,7 @@ class WheelchairViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         facilitiesTable.rowHeight = 50
-        
+        facilitiesTable.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }
     
