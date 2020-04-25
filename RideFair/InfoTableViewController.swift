@@ -8,17 +8,18 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class InfoTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
             
 
-    
+    let db = Firestore.firestore()
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     let stops: [String] = ["Lechmere",
-                           "Science Park/West End",
+                           "Science Park",
                            "North Station",
                            "Haymarket",
                            "Government Center",
@@ -48,7 +49,7 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
                            "Boston College"]
     
     let stopIDs: [String: String] = ["Lechmere": "place-lech",
-                                     "Science Park/West End": "place-spmnl",
+                                     "Science Park": "place-spmnl",
                                      "North Station": "place-north",
                                      "Haymarket": "place-haecl",
                                      "Government Center": "place-gover",
@@ -115,10 +116,8 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = (self.tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell?)!
-        cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle , reuseIdentifier: cellReuseIdentifier)
-        cell.detailTextLabel?.text = "Rated 4/5"
-        cell.imageView?.image = UIImage(named: "wheelchair")
+        let cell:UITableViewCell = (self.tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell?)!
+        
         cell.textLabel?.text = self.filteredStops[indexPath.row]
         
         return cell
@@ -134,6 +133,8 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
         print("You tapped cell number \(indexPath.row).")
         
         selectedStop = filteredStops[indexPath.row]
@@ -147,14 +148,17 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "wheelchair") as! WheelchairViewController
             nextViewController.modalPresentationStyle = .popover
             nextViewController.stopId = stopCode
+            nextViewController.currentStop = selectedStop
             self.present(nextViewController, animated:true, completion:nil)
         } else if (isWheelchairAccessible == 2) {
             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "wheelchair") as! WheelchairViewController
             nextViewController.modalPresentationStyle = .popover
             nextViewController.stopId = stopCode
+            nextViewController.currentStop = selectedStop
             self.present(nextViewController, animated:true, completion:nil)
             nextViewController.wheelchairImageView.image = UIImage(named: "notWheelchair")
         }
+        
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
