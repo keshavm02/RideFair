@@ -15,6 +15,8 @@ class RatingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var commentsField: UITextView!
     
+    var stopName = String()
+    
     var pickerData: [Int] = [Int]()
     
     override func viewDidLoad() {
