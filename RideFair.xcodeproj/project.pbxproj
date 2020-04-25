@@ -20,12 +20,14 @@
 		6BCCF6BA240736E300FFF812 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B9240736E300FFF812 /* Assets.xcassets */; };
 		6BCCF6BD240736E300FFF812 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BCCF6BB240736E300FFF812 /* LaunchScreen.storyboard */; };
 		6BF2A65B24453D4400B0CF40 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF2A65A24453D4400B0CF40 /* API.swift */; };
+		ACBAC81BF56D69E9339B1010 /* Pods_RideFair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFAED00AC6AE0F1DC83646F /* Pods_RideFair.framework */; };
 		F1B349A5244BB58C000F3171 /* FromTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B349A4244BB58C000F3171 /* FromTableViewController.swift */; };
 		F1BAB43B244CECD700F4C2EF /* ToTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BAB43A244CECD700F4C2EF /* ToTableViewController.swift */; };
 		F1BAB43D244D1DD900F4C2EF /* StationRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BAB43C244D1DD900F4C2EF /* StationRecViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48E8D94B7FBA958DE774DAC0 /* Pods-RideFair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideFair.release.xcconfig"; path = "Target Support Files/Pods-RideFair/Pods-RideFair.release.xcconfig"; sourceTree = "<group>"; };
 		593347AC244E28DC000C664F /* WheelchairViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelchairViewController.swift; sourceTree = "<group>"; };
 		6B141E6A2432D801005417CE /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		6B141E6E2432FD2B005417CE /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
@@ -41,6 +43,8 @@
 		6BCCF6BC240736E300FFF812 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BCCF6BE240736E300FFF812 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BF2A65A24453D4400B0CF40 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		AD36AFEDDA38A1332C0C6334 /* Pods-RideFair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideFair.debug.xcconfig"; path = "Target Support Files/Pods-RideFair/Pods-RideFair.debug.xcconfig"; sourceTree = "<group>"; };
+		BCFAED00AC6AE0F1DC83646F /* Pods_RideFair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideFair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B349A4244BB58C000F3171 /* FromTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromTableViewController.swift; sourceTree = "<group>"; };
 		F1BAB43A244CECD700F4C2EF /* ToTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToTableViewController.swift; sourceTree = "<group>"; };
 		F1BAB43C244D1DD900F4C2EF /* StationRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRecViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B79FE11241E6FFD0019D764 /* MapKit.framework in Frameworks */,
+				ACBAC81BF56D69E9339B1010 /* Pods_RideFair.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				6B79FE10241E6FFD0019D764 /* MapKit.framework */,
+				BCFAED00AC6AE0F1DC83646F /* Pods_RideFair.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -72,6 +78,7 @@
 				6BCCF6AF240736E000FFF812 /* RideFair */,
 				6BCCF6AE240736E000FFF812 /* Products */,
 				6B79FE0F241E6FFD0019D764 /* Frameworks */,
+				8B8B09CDC46B97A1332129BB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +113,16 @@
 			path = RideFair;
 			sourceTree = "<group>";
 		};
+		8B8B09CDC46B97A1332129BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD36AFEDDA38A1332C0C6334 /* Pods-RideFair.debug.xcconfig */,
+				48E8D94B7FBA958DE774DAC0 /* Pods-RideFair.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BCCF6C1240736E300FFF812 /* Build configuration list for PBXNativeTarget "RideFair" */;
 			buildPhases = (
+				C75044E34FFB7561403B3F32 /* [CP] Check Pods Manifest.lock */,
 				6BCCF6A9240736E000FFF812 /* Sources */,
 				6BCCF6AA240736E000FFF812 /* Frameworks */,
 				6BCCF6AB240736E000FFF812 /* Resources */,
+				366E07A02A5CD845A0A9BD16 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,6 +191,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		366E07A02A5CD845A0A9BD16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RideFair/Pods-RideFair-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RideFair/Pods-RideFair-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RideFair/Pods-RideFair-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C75044E34FFB7561403B3F32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RideFair-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6BCCF6A9240736E000FFF812 /* Sources */ = {
@@ -330,6 +391,7 @@
 		};
 		6BCCF6C2240736E300FFF812 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD36AFEDDA38A1332C0C6334 /* Pods-RideFair.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -348,6 +410,7 @@
 		};
 		6BCCF6C3240736E300FFF812 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48E8D94B7FBA958DE774DAC0 /* Pods-RideFair.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
