@@ -11,6 +11,7 @@
 		6B141E6B2432D801005417CE /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B141E6A2432D801005417CE /* InfoTableViewController.swift */; };
 		6B141E6F2432FD2B005417CE /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B141E6E2432FD2B005417CE /* NavigationButton.swift */; };
 		6B30D88024540ADA00605149 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B30D87F24540ADA00605149 /* RatingsViewController.swift */; };
+		6B30D88624540E0200605149 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B30D88524540E0200605149 /* Podfile */; };
 		6B79FE11241E6FFD0019D764 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B79FE10241E6FFD0019D764 /* MapKit.framework */; };
 		6BCCF6B1240736E000FFF812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B0240736E000FFF812 /* AppDelegate.swift */; };
 		6BCCF6B3240736E000FFF812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B2240736E000FFF812 /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 		6B141E6A2432D801005417CE /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
 		6B141E6E2432FD2B005417CE /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		6B30D87F24540ADA00605149 /* RatingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
+		6B30D88524540E0200605149 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		6B79FE10241E6FFD0019D764 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6BCCF6AD240736E000FFF812 /* RideFair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideFair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCCF6B0240736E000FFF812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				F1BAB43A244CECD700F4C2EF /* ToTableViewController.swift */,
 				6B141E6E2432FD2B005417CE /* NavigationButton.swift */,
 				6BF2A65A24453D4400B0CF40 /* API.swift */,
+				6B30D88524540E0200605149 /* Podfile */,
 			);
 			path = RideFair;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			files = (
 				6BCCF6BD240736E300FFF812 /* LaunchScreen.storyboard in Resources */,
 				6BCCF6BA240736E300FFF812 /* Assets.xcassets in Resources */,
+				6B30D88624540E0200605149 /* Podfile in Resources */,
 				6BCCF6B8240736E000FFF812 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
