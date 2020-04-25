@@ -89,6 +89,7 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        
         self.tableView.tableFooterView = UIView()
         
         tableView.delegate = self
@@ -114,8 +115,10 @@ class InfoTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = (self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell?)!
-        
+        var cell:UITableViewCell = (self.tableView.dequeueReusableCell(withIdentifier: "cell") as UITableViewCell?)!
+        cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle , reuseIdentifier: cellReuseIdentifier)
+        cell.detailTextLabel?.text = "Rated 4/5"
+        cell.imageView?.image = UIImage(named: "wheelchair")
         cell.textLabel?.text = self.filteredStops[indexPath.row]
         
         return cell
