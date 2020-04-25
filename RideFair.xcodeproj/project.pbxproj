@@ -13,6 +13,7 @@
 		6B30D88024540ADA00605149 /* RatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B30D87F24540ADA00605149 /* RatingsViewController.swift */; };
 		6B30D88624540E0200605149 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6B30D88524540E0200605149 /* Podfile */; };
 		6B30D888245410C700605149 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B30D887245410C600605149 /* GoogleService-Info.plist */; };
+		6B30D88A24541E3D00605149 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B30D88924541E3D00605149 /* SpinnerView.swift */; };
 		6B79FE11241E6FFD0019D764 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B79FE10241E6FFD0019D764 /* MapKit.framework */; };
 		6BCCF6B1240736E000FFF812 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B0240736E000FFF812 /* AppDelegate.swift */; };
 		6BCCF6B3240736E000FFF812 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCF6B2240736E000FFF812 /* SceneDelegate.swift */; };
@@ -35,6 +36,7 @@
 		6B30D87F24540ADA00605149 /* RatingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsViewController.swift; sourceTree = "<group>"; };
 		6B30D88524540E0200605149 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		6B30D887245410C600605149 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6B30D88924541E3D00605149 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		6B79FE10241E6FFD0019D764 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6BCCF6AD240736E000FFF812 /* RideFair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideFair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BCCF6B0240736E000FFF812 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				6B30D87F24540ADA00605149 /* RatingsViewController.swift */,
 				F1B349A4244BB58C000F3171 /* FromTableViewController.swift */,
 				593347AC244E28DC000C664F /* WheelchairViewController.swift */,
+				6B30D88924541E3D00605149 /* SpinnerView.swift */,
 				F1BAB43A244CECD700F4C2EF /* ToTableViewController.swift */,
 				6B141E6E2432FD2B005417CE /* NavigationButton.swift */,
 				6BF2A65A24453D4400B0CF40 /* API.swift */,
@@ -252,6 +255,7 @@
 				6B141E6B2432D801005417CE /* InfoTableViewController.swift in Sources */,
 				6BCCF6B1240736E000FFF812 /* AppDelegate.swift in Sources */,
 				F1BAB43D244D1DD900F4C2EF /* StationRecViewController.swift in Sources */,
+				6B30D88A24541E3D00605149 /* SpinnerView.swift in Sources */,
 				6BCCF6B3240736E000FFF812 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
