@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class WheelchairViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    let db = Firestore.firestore()
+    
+    @IBOutlet weak var ratingLabel: UILabel!
+    var currentStop = String()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.facilitiesList.count
@@ -16,7 +22,7 @@ class WheelchairViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alertController = UIAlertController(title: facilitiesList[indexPath.row].replacingOccurrences(of: "_", with: " "), message: facilitiesName[indexPath.row], preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -30,11 +36,14 @@ class WheelchairViewController: UIViewController, UITableViewDataSource, UITable
     
     var facilitiesList: [String] = []
     var facilitiesName: [String] = []
+    @IBOutlet weak var facilitiesTable: UITableView!
+
     var stopId: String?;
     @IBOutlet weak var wheelchairImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let rawFacilitiesList = API().getFacilities(stop: stopId!)
         facilitiesList = Array(rawFacilitiesList.values.map{ $0 })
         facilitiesName = Array(rawFacilitiesList.keys.map{ $0 })
@@ -50,16 +59,42 @@ class WheelchairViewController: UIViewController, UITableViewDataSource, UITable
         // Do any additional setup after loading the view.
     }
     
-
-    @IBOutlet weak var facilitiesTable: UITableView!
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        getRating()
     }
-    */
+    
+    @IBAction func rateThisStopButtonPressed(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let ratingsVC: RatingsViewController = storyBoard.instantiateViewController(withIdentifier: "rate") as! RatingsViewController
+        ratingsVC.modalPresentationStyle = .popover
+        
+        ratingsVC.stopName = currentStop
+            
+        self.present(ratingsVC, animated:true, completion:nil)
+        
+        ratingsVC.topLabel.text = "Please rate \(currentStop) out of 5."
+    }
+    
+    func getRating() {
+        
+        self.showSpinner(onView: self.view)
+        let docRef = db.collection("ratings").document(currentStop)
 
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                self.removeSpinner()
+                
+                let documentData = document.data()
+                
+                self.ratingLabel.text = "Rated \(documentData?["rating"] ?? "0")/5"
+                print("Document data: \(documentData)")
+            } else {
+                self.removeSpinner()
+                
+                print("Document does not exist")
+            }
+        }
+        
+    }
+    
 }

@@ -1,0 +1,6 @@
+framework module Pods_RideFair {
+  umbrella header "Pods-RideFair-umbrella.h"
+
+  export *
+  module * { export * }
+}
