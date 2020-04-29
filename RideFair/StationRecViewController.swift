@@ -17,6 +17,8 @@ class StationRecViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        goButton.layer.cornerRadius = 10
     }
     
     // After green "Go" button is clicked, message pops up to open a navigation app

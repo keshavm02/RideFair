@@ -15,6 +15,7 @@ class WheelchairViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var ratingLabel: UILabel!
     var currentStop = String()
+    @IBOutlet weak var rateButton: UIButton!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.facilitiesList.count
@@ -43,6 +44,8 @@ class WheelchairViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rateButton.layer.cornerRadius = 15
         
         let rawFacilitiesList = API().getFacilities(stop: stopId!)
         facilitiesList = Array(rawFacilitiesList.values.map{ $0 })

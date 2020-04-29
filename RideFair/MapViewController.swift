@@ -17,6 +17,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var fromTextField: UITextField!
     @IBOutlet weak var toTextField: UITextField!
     @IBOutlet weak var startNavigationButton: NavigationButton!
+    @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var fromClearButton: UIButton!
     @IBOutlet weak var toClearButton: UIButton!
     
@@ -26,6 +27,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         self.mapView.delegate = self
         mapView.showsUserLocation = true // Show current location
+        
+        locationButton.layer.cornerRadius = 10
+        startButton.layer.cornerRadius = 10
         
         // Request and get location
         locationManager.delegate = self
